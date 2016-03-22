@@ -15,8 +15,10 @@ history <- data.table(timestamp=as.double(jsonData$locations$timestampMs)/1000 #
 history[,dt := as.Date(as.POSIXct(timestamp, origin="1970-01-01"),tz = "America/Chicago")] #timestamp is unix epoch
 
 #filter to work loc data
-workLat <- 38.666522
-workLong <- -90.557984
+#Directly enter on your own; my work coords are stored in workCoords.RData
+load("workCoords.Rdata")
+#workLat <- 1234
+#workLong <- 1234
 #draw a box around work
 latMin <- workLat - .005
 latMax <- workLat + .005
